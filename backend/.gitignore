@@ -1,0 +1,54 @@
+# ── Environment ──────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Python ────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+
+# ── Virtual Environments ──────────────────────────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ── Distribution / Build ──────────────────────────────────────
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# ── Testing ───────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.coveragerc
+
+# ── Linting / Type Checking ───────────────────────────────────
+.mypy_cache/
+.ruff_cache/
+
+# ── Database / Vector Store ───────────────────────────────────
+chroma_db/
+*.sqlite3
+*.db
+
+# ── Logs ──────────────────────────────────────────────────────
+logs/
+*.log
+
+# ── OS / IDE ──────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ── Alembic (keep migrations, ignore generated cache) ─────────
+alembic/__pycache__/
