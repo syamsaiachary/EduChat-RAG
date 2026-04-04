@@ -74,7 +74,7 @@ export const Chat = () => {
           <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center text-primary">
             <GraduationCap size={20} />
           </div>
-          <span className="font-bold tracking-tight text-white">EduChat Pro</span>
+          <span className="font-bold tracking-tight text-white">EduChat</span>
         </div>
         
         <div className="px-4 py-2">
@@ -192,9 +192,6 @@ export const Chat = () => {
                     <Send size={18} className="translate-x-[1px] translate-y-[1px]" />
                   </button>
                 </form>
-                <div className="text-center mt-3 text-[11px] text-text-muted">
-                  EduChat Pro can make mistakes. Consider verifying important information.
-                </div>
               </div>
             </div>
           </>
