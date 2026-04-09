@@ -4,6 +4,8 @@ import { useSessions } from '../hooks/useSessions';
 import { useChat } from '../hooks/useChat';
 import { GraduationCap, LogOut, Settings, Plus, Send, Trash2, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export const Chat = () => {
   const { user, isAdmin, logout } = useAuthContext();
@@ -157,7 +159,13 @@ export const Chat = () => {
                     </div>
                   )}
                   <div className={`max-w-[90%] sm:max-w-[75%] rounded-[20px] p-5 ${m.role === 'user' ? 'bg-primary text-white rounded-tr-md shadow-md shadow-primary/20' : 'bg-surface border border-border text-text-primary rounded-tl-md shadow-sm'}`}>
-                    <div className="whitespace-pre-wrap leading-relaxed text-[15px]">{m.content}</div>
+                    {m.role === 'user' ? (
+                      <div className="whitespace-pre-wrap leading-relaxed text-[15px]">{m.content}</div>
+                    ) : (
+                      <div className="markdown-body text-[15px] leading-relaxed">
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>{m.content}</ReactMarkdown>
+                      </div>
+                    )}
                     
                     {m.streaming && (
                       <div className="flex gap-1.5 mt-3 mb-1">

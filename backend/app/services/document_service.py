@@ -50,8 +50,8 @@ def ingest_document(doc_id: uuid.UUID, file_path: str, file_type: str, filename:
             docs = parse_file(file_path, file_type)
 
         splitter = RecursiveCharacterTextSplitter(
-            chunk_size=500,
-            chunk_overlap=75
+            chunk_size=1000,
+            chunk_overlap=100
         )
         chunks = splitter.split_documents(docs)
         
